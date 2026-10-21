@@ -23,7 +23,7 @@ The paper ID comes from the file name: `121 Submission.pdf` → `121`. The email
 
 ## Setup
 
-1. Fill in `.env` (see `.env.example`). You need `SUPABASE_SERVICE_ROLE_KEY`; it stays on the server.
+1. Fill in `.env` (see `.env.example`). You need `SUPABASE_SECRET_KEY` (the `sb_secret_…` key; the legacy `SUPABASE_SERVICE_ROLE_KEY` also works). It stays on the server.
 2. Create the tables: paste `supabase/001_init.sql`, `supabase/002_certificates.sql` and `supabase/003_conferences.sql`, in that order, into the Supabase SQL editor and run them.
 3. `npm run db:seed` adds the admin login (`ADMIN_EMAIL` / `ADMIN_PASSWORD` from `.env`) to both the test and prod tables, and test payment IDs `PAY-TEST-0001` … `PAY-TEST-0005` to the test tables.
 4. `npm run dev`

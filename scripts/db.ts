@@ -36,7 +36,7 @@ function need(name: string, ...alts: string[]) {
 }
 
 async function seed() {
-  const supabase = createClient(need("SUPABASE_URL", "VITE_SUPABASE_URL"), need("SUPABASE_SERVICE_ROLE_KEY"), { auth: { persistSession: false } });
+  const supabase = createClient(need("SUPABASE_URL", "VITE_SUPABASE_URL"), need("SUPABASE_SECRET_KEY", "SUPABASE_SERVICE_ROLE_KEY"), { auth: { persistSession: false } });
   const email = need("ADMIN_EMAIL").toLowerCase();
   const password_hash = await hashPassword(need("ADMIN_PASSWORD"));
 
